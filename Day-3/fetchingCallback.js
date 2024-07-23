@@ -10,3 +10,4 @@ function handleData(data){
 }
 
 fetchData("https://course-api.com/react-store-products", handleData);
+

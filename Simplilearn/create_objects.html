@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>
+            Javascript Objects
+        </title>
+    </head>
+
+    <body>
+        <h1>Creating Javascript Objects</h1>
+        <p id="demo"></p>  
+        <p id="demo1"></p>
+        <p id="demo2"></p>  
+
+    </body>
+
+    <script>    
+    //by using object literal
+    //creating object named student...object in js looks similar to dictionary in python
+        var student ={
+            name: "Phoebe",
+            age: 27,
+            studies: "Music",
+        }; 
+        //contents of object are accessed
+        document.getElementById("demo").innerHTML = student.name + " of age "+ student.age+ " studies "+ student.studies+ ".";
+    
+        //by using 'new' keyword    (traditional way of creating an object)
+        var student=new Object();
+        student.name = "Joey";
+        student.age = 28;
+        student.studies = "Acting";
+        document.getElementById("demo1").innerHTML = student.name + " of age "+ student.age+ " studies "+ student.studies+ ".";
+
+        //by using an object constructor
+// run vayena need to ask my tech mom
+        function stud(name,age,studies){
+            this.name = name;
+            this.age =age;
+            this.studies = studies;
+        }
+        var student = stud("Ross",29,"Paleontology");
+        document.getElementById("demo").innerHTML = student.name + " of age "+ student.age+ " studies "+ student.studies+ ".";
+    </script>
+</html>

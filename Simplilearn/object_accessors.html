@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>
+            Javascript Objects
+        </title>
+    </head>
+
+    <body>
+        <h1>Javascript Objects Accessors</h1>
+        <p id="demo"></p> 
+        <p id="demo1"></p>  
+        <p id="demo2"></p>  
+        <p id="demo3"></p>
+        <p id="demo4"></p> 
+    </body> 
+
+    <script>
+        var car ={
+            model: "BMW 320d",
+            color: "Navy Blue",
+            fuel_type: "Diesel",   
+            get fuel(){
+                return this.fuel_type
+            },
+            get col(){
+                return this.color
+            }
+        };
+        document.getElementById("demo").innerHTML = car.fuel;
+        document.getElementById("demo1").innerHTML = car.col;
+       
+        var car = {
+            model: "Audi A4",
+            color: "Black",
+            fuel_type: "",
+            set fuel(fuel){
+                this.fuel_type = fuel;
+            }
+        };
+        car.fuel = "Petrol";
+        document.getElementById("demo2").innerHTML = car.fuel_type;
+
+    </script>
+</html>    

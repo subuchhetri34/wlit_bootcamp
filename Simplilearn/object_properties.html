@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>
+            Javascript Objects
+        </title>
+    </head>
+
+    <body>
+        <h1>Javascript Object Properties</h1>
+        <p id="demo"></p>  
+        <p id="demo1"></p>
+        <p id="demo2"></p>  
+        <p id="demo3"></p>
+        <p id="demo4"></p>  
+    </body>  
+
+    
+    <script>    
+        var student ={
+            name: "Phoebe",
+            age: 27,
+            studies: "Music",
+        }; 
+        document.getElementById("demo").innerHTML = student.name + " of age "+ student.age+ " studies "+ student.studies+ ".";
+
+        // ways of accessing the properties
+
+        student.age = 29;    //updating an element in object
+
+        document.getElementById("demo1").innerHTML = student.name + " of age "+ student.age+ " studies "+ student.studies+ ".";
+
+        x=student.age;
+        document.getElementById("demo2").innerHTML = student.name + " of age "+ x + " studies "+ student.studies+ ".";
+
+        x="age";
+        document.getElementById("demo3").innerHTML = student.name + " of age "+ student[x] + " studies "+ student.studies+ ".";
+        
+    </script>
+</html>    
+    

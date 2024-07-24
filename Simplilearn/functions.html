@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>JavaScript Functions</title>
+    </head>
+    <body>
+        <p id = "demo" ></p>
+        <p id = "demo1" ></p>
+        <p id = "demo2" ></p>
+
+
+    </body>
+
+    <script>
+        //function to calculate square of a number
+        //function declaration
+        function my_function(val){
+            document.getElementById("demo").innerHTML = val* val
+        } 
+        my_function(5);   //calling function
+
+
+        //function expression
+        let x=function(){
+            alert("Hello!")
+        }
+        let y=x;
+        document.getElementById("demo1").innerHTML = y();
+
+
+    </script>
+</html>

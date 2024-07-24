@@ -6,6 +6,8 @@
         <h1>Async/Await</h1>
     </body>
     <script>
+
+        // without using async/await
         let result = function(score){
             return new Promise(function(resolve,reject){
                 console.log("Calculating results...");
@@ -19,20 +21,39 @@
         }
 
         let grade = function(response){
-            return new Promise(function(){
-                console.log("Calculating yout grade...");
+            return new Promise(function(resolve,reject){
+                console.log("Calculating your grade...");
                 resolve("Your grade is A."+response);
             })
         }
-        result(80).then(response =>{
-            console.log("Result recieved");
-            return grade(response);
-        })
-        .then(finalgrade =>{
-            console.log(finalgrade);
-        })
-        .catch(err=>{
-            console.log(err);
-        })
-    </script>
+
+        // result(80).then(response =>{
+        //     console.log("Result recieved");
+        //     return grade(response);
+        // })
+        // .then(finalgrade =>{
+        //     console.log(finalgrade);
+        // })
+        // .catch(err=>{
+        //     console.log(err);
+        // })
+
+
+        //using async/await 
+        async function calculateResults(){
+            try{
+                const response = await result(80);
+               // const response = await result(20);  example of reject
+
+                console.log("Results recieved");
+                const finalgrade = await grade(response);
+                console.log(finalgrade);
+            }
+            catch(err){
+                console.log(err);
+            }
+        }
+        calculateResults();
+
+    </script>    
 </html>

@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Javascript Async/Await</title>
+    </head>
+    <body>
+        <h1>Async/Await</h1>
+    </body>
+    <script>
+        let result = function(score){
+            return new Promise(function(resolve,reject){
+                console.log("Calculating results...");
+                if(score > 50){
+                    resolve("Congratulations! you have passed");
+                }
+                else{
+                    reject("You have failed.");
+                }
+            })
+        }
+
+        let grade = function(response){
+            return new Promise(function(){
+                console.log("Calculating yout grade...");
+                resolve("Your grade is A."+response);
+            })
+        }
+        result(80).then(response =>{
+            console.log("Result recieved");
+            return grade(response);
+        })
+        .then(finalgrade =>{
+            console.log(finalgrade);
+        })
+        .catch(err=>{
+            console.log(err);
+        })
+    </script>
+</html>

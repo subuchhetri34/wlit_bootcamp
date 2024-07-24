@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>JavaScript Promises</title>
+    </head>
+    <body>
+        <p id = "demo" ></p>
+        <p id = "demo1" ></p>
+        <p id = "demo2" ></p>
+    </body>
+
+    <script>
+        let car = new Promise(function(resolve,reject){
+          fuel_fullTank = true;
+          if(fuel_fullTank)
+              resolve()
+          else 
+             reject() 
+    });
+
+    car.then(function(){
+        document.write("The fuel is full.Happy Driving!")
+    })
+    .catch(function(){
+        document.write("The fuel tank is not empty.");
+    })
+    </script>
+</html>

@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>Email Validation</title>
+
+        <script>
+            function Validate(){
+                var mail = document.getElementById("text").value;
+// ^ indicates the beginning of the regular expressions
+// + one or more occurences of a character
+// . outside the square bracket is considered a literal and inside the bracket with escape seq a n actual period
+
+                var regx = /^([a-zA-Z0-9\._]+)@([a-zA-Z0-9])+.([a-z]+)(.[a-z]+)?$/ ;
+
+                if(regx.test(mail)){
+                    alert("You have provided a valid Email ID.");
+                    return true;
+                }
+                else{
+                    alert("Sorry! Incorrect Email ID");
+                    return false;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form onclick="Validate()" >
+            <input id="text" placeholder="email" type="text">
+            <br><br>
+            <button type="button">Submit</button>
+        </form>
+    </body>
+</html>
